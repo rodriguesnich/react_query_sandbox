@@ -1,5 +1,6 @@
+import { Film } from "./models";
 
-function Card({ film }: { film: { label: string; year: number } }) {
+function Card({ film }: { film: Film }) {
   return (
     <div style={CardStyle}>
       <h5>{film.label}</h5>
