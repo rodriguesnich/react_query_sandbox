@@ -1,5 +1,5 @@
-import { Suspense, useState } from "react";
-import CardsContainer from "../components/CardsContainer";
+import {  useState } from "react";
+import CardsContainer from "./components/MoviesList/MoviesListContainer";
 
 function SearchMoviesPage() {
   const [filmNameSearch, setFilmNameSearch] = useState("");
@@ -14,9 +14,7 @@ function SearchMoviesPage() {
         type="text"
         style={AppStyles}
       />
-      <Suspense fallback={<div>Loading...</div>}>
-        <CardsContainer filmNameSearch={filmNameSearch} />
-      </Suspense>
+     <CardsContainer filmNameSearch={filmNameSearch} /> 
     </>
   );
 }

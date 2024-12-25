@@ -11,6 +11,11 @@ server.use((req, res, next) => {
   next();
 });
 
+// Add delay middleware - simulate network delay
+server.use((req, res, next) => {
+  setTimeout(next, 1000) // 1 second delay
+});
+
 server.use(router);
 server.listen(3001, () => {
   console.log('JSON Server is running');

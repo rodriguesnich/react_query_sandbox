@@ -1,16 +1,16 @@
-import { Film } from "./models";
+import { Film } from "../models";
 
 function Card({ film }: { film: Film }) {
   return (
     <div style={CardStyle}>
       <h5>{film.label}</h5>
-      <span>{film.year}</span>
+      <p>{film.year}</p>
     </div>
   );
 }
 
 const CardStyle = {
-  border: "0.5px solid white",
+  border: "0.1px solid white",
   padding: "1rem",
   borderRadius: "15px",
   marginBottom: "1rem",
