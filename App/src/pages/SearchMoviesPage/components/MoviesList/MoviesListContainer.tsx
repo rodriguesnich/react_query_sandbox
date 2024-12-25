@@ -7,7 +7,7 @@ import OnError from "./states/OnError";
 function MoviesListContainer({ filmNameSearch }: { filmNameSearch: string }) {
   return (
     <Suspense fallback={<Loading />}>
-      <ErrorBoundary fallback={<OnError />}>
+      <ErrorBoundary FallbackComponent={OnError}>
         <CardsList filmNameSearch={filmNameSearch} />
       </ErrorBoundary>
     </Suspense>

@@ -12,15 +12,15 @@ function SearchMoviesPage() {
         onChange={(evt) => setFilmNameSearch(evt.target.value)}
         placeholder="Film Name"
         type="text"
-        style={AppStyles}
+        style={FilterStyles}
       />
      <CardsContainer filmNameSearch={filmNameSearch} /> 
     </>
   );
 }
 
-const AppStyles: React.CSSProperties = {
-  width: "100%",
+const FilterStyles: React.CSSProperties = {
+  width: "80vw",
   height: "2rem",
   marginBottom: "1rem",
 };

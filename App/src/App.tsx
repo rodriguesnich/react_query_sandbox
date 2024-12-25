@@ -1,12 +1,11 @@
 import "./App.css";
+import Header from "./components/Header";
 import SearchMoviesPage from "./pages/SearchMoviesPage";
 
 export default function App() {
   return (
     <>
-      <div style={{ color: "white", width: "100%", height: "5rem" }}>
-        header
-      </div>
+      <Header />
       <SearchMoviesPage />
     </>
   );

@@ -1,19 +1,16 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('db.json'); // Your database file
-const middlewares = jsonServer.defaults();
+const router = jsonServer.router('db.json'); 
 
-// Add custom middleware for CORS
-server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Allow any origin
+server.use((_, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); 
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-// Add delay middleware - simulate network delay
-server.use((req, res, next) => {
-  setTimeout(next, 1000) // 1 second delay
+server.use((_, res, next) => {
+  setTimeout(next, 1000)
 });
 
 server.use(router);

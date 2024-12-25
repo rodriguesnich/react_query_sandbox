@@ -1,10 +1,16 @@
+import axios, { AxiosError } from "axios";
 import { Film } from "./models";
 
-export const fetchTodoList = async (): Promise<Film[]> => {
-  const response = await fetch(
-    "http://localhost:3001/films"
-  ).then((res) => res.json());
-  //throw new Error("Test");
-  
-  return response || [];
-};
+const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL as string;
+
+export async function fetchTodoList() {
+  try {
+    const { data } = await axios.get<Array<Film>>(`${VITE_SERVER_URL}/films`);
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw new Error(`${error.message}`);
+    }
+    throw error;
+  }
+}
