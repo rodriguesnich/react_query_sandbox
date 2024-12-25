@@ -1,6 +1,6 @@
-import { Film } from "../models";
+import { Film } from "../pages/ServerSearchMoviesPage/components/MoviesList/models";
 
-function Card({ film }: { film: Film }) {
+function MovieCard({ film }: { film: Film }) {
   return (
     <div style={CardStyle}>
       <h5>{film.label}</h5>
@@ -16,4 +16,4 @@ const CardStyle = {
   marginBottom: "1rem",
 };
 
-export { Card, CardStyle };
+export { MovieCard, CardStyle };

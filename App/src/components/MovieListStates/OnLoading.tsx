@@ -1,5 +1,5 @@
-import { MoviesContainerStyle } from "..";
-import { CardStyle } from "../components/Card";
+import { MoviesContainerStyle } from "../../pages/SearchMoviesPage/components/MoviesList";
+import { CardStyle } from "../MovieCard";
 
 const loadingCardStyle = {
   ...CardStyle,
