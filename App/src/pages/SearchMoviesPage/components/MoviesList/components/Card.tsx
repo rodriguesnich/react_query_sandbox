@@ -16,5 +16,4 @@ const CardStyle = {
   marginBottom: "1rem",
 };
 
-
-export default Card;
+export { Card, CardStyle };

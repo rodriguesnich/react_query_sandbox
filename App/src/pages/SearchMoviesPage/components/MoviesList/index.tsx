@@ -1,8 +1,8 @@
-import Card from "./components/Card";
 import { useQuery } from "@tanstack/react-query";
 import { Film } from "./models";
 import { fetchTodoList } from "./api";
 import OnEmpty from "./states/OnEmpty";
+import { Card } from "./components/Card";
 
 function MoviesList({ filmNameSearch }: { filmNameSearch: string }) {
   const { data: films } = useQuery<Film[]>({
@@ -17,7 +17,7 @@ function MoviesList({ filmNameSearch }: { filmNameSearch: string }) {
   );
 
   return (
-    <div style={CardsContainerStyle}>
+    <div style={MoviesContainerStyle}>
       {filteredFilms.map((film) => (
         <Card key={film.label} film={film} />
       ))}
@@ -25,11 +25,11 @@ function MoviesList({ filmNameSearch }: { filmNameSearch: string }) {
   );
 }
 
-const CardsContainerStyle: React.CSSProperties = {
+const MoviesContainerStyle: React.CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
   gap: "1rem",
   padding: "1rem",
 };
 
-export default MoviesList;
+export { MoviesList, MoviesContainerStyle }; 
